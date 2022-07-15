@@ -89,6 +89,11 @@ public class App {
 
   private static void listarDiaristas(DiaristaRepository repository) {
     var diaristas = repository.buscarTodos();
+
+    if (diaristas.isEmpty()) {
+      System.out.println("Não existem diaristas cadastrados");
+    }
+
     for (Diarista diarista : diaristas) {
       System.out.println(diarista.getId() + " - " + diarista.getNome());
     }
